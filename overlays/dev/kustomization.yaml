@@ -3,7 +3,5 @@ kind: Kustomization
 images:
 - name: docker.io/yaongdocker/github-echo-demo
   newTag: a3cbf2a3
-- name: yaongdocker/github-echo-demo
-  newTag: 9724ca45
 resources:
 - ../../base
