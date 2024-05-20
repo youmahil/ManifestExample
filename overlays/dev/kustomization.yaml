@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: docker.io/yaongdocker/github-echo-demo
-  newTag: 2eca1fc1
+  newTag: a3cbf2a3
 - name: yaongdocker/github-echo-demo
   newTag: 9724ca45
 resources:
