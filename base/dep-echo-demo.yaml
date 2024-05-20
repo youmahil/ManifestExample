@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
       - name: cnt-echo-demo
-        image: harbor.yaong.domain/testproject/echo-demo:0.0.1
+        #image: harbor.yaong.domain/testproject/echo-demo:0.0.1
+        image: docker.io/yaongdocker/github-echo-demo:dev
         ports:
         - containerPort: 8080
         volumeMounts:
