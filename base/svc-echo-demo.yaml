@@ -1,0 +1,15 @@
+# echo-demo Service 
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-echo-demo
+  labels:
+    whatCat: my-echo-demo
+spec:
+  type: NodePort
+  ports:
+  - nodePort: 31080
+    port: 8080
+    protocol: TCP
+  selector:
+    whatCat: my-echo-demo

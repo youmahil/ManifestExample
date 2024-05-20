@@ -1,0 +1,28 @@
+# echo-demo Deployment 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-echo-demo
+spec:
+  selector:
+    matchLabels:
+      whatCat: my-echo-demo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        whatCat: my-echo-demo
+    spec:
+      containers:
+      - name: cnt-echo-demo
+        image: harbor.yaong.domain/testproject/echo-demo:0.0.1
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+            - name: vol-echo-demo
+              mountPath: /nfsdemofiles
+      volumes:
+        - name: vol-echo-demo
+          nfs:
+             server: 172.16.11.3
+             path: /nfsdata/echo-demo-data   # NFS server's shared path
