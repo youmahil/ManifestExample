@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dep-echo-demo
+  name: hub-dep-echo-demo
 spec:
   selector:
     matchLabels:
-      whatCat: my-echo-demo
+      whatCat: hub-my-echo-demo
   replicas: 3
   template:
     metadata:
       labels:
-        whatCat: my-echo-demo
+        whatCat: hub-my-echo-demo
     spec:
       containers:
-      - name: cnt-echo-demo
+      - name: hub-cnt-echo-demo
         #image: harbor.yaong.domain/testproject/echo-demo:0.0.1
         image: docker.io/yaongdocker/github-echo-demo:dev
         ports:
